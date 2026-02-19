@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Servicios · Pactiacalli · Masoterapia Profesional CDMX</title>
+  <meta name="description" content="Conoce el catálogo completo de servicios de masoterapia profesional de Pactiacalli. Terapia corporal profunda, rituales, drenaje, recuperación deportiva y programas personalizados en CDMX." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / WhatsApp -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://anglard.github.io/pactiacalli/servicios.html" />
+  <meta property="og:title"        content="Catálogo de Servicios · Pactiacalli · Masoterapia Profesional CDMX" />
+  <meta property="og:description"  content="Masoterapia profesional con diagnóstico corporal personalizado. Terapia profunda, rituales ancestrales, drenaje, recuperación deportiva y programas de proceso en CDMX." />
+  <meta property="og:image"        content="https://anglard.github.io/pactiacalli/images/hero-servicios.jpg" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"    content="Catálogo de servicios de masoterapia profesional Pactiacalli, CDMX" />
+  <meta property="og:locale"       content="es_MX" />
+  <meta property="og:site_name"    content="Pactiacalli" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Catálogo de Servicios · Pactiacalli · Masoterapia Profesional CDMX" />
+  <meta name="twitter:description" content="Masoterapia profesional con diagnóstico corporal personalizado. Terapia profunda, rituales ancestrales, drenaje, recuperación deportiva y programas de proceso en CDMX." />
+  <meta name="twitter:image"       content="https://anglard.github.io/pactiacalli/images/hero-servicios.jpg" />
+  <meta name="twitter:image:alt"   content="Catálogo de servicios de masoterapia profesional Pactiacalli, CDMX" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="images/logo-pactiacalli.jpeg" />
+  <link rel="apple-touch-icon"       href="images/logo-pactiacalli.jpeg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================
+       VARIABLES & RESET
+    ========================================= */
+    :root {
+      --verde:     #1F3A2E;
+      --verde-m:   #2a5040;
+      --arena:     #D8C3A5;
+      --arena-l:   #ede3d4;
+      --arena-xs:  #f7f2eb;
+      --blanco:    #F5F5F5;
+      --negro:     #1A1A1A;
+      --gris:      #6b6b6b;
+      --gris-l:    #999;
+      --linea:     rgba(31,58,46,.12);
+      --sombra:    0 8px 40px rgba(31,58,46,.09);
+      --radio:     3px;
+      --trans:     .35s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; }
+    body  {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanco);
+      color: var(--negro);
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+    ul  { list-style: none; }
+
+    /* =========================================
+       UTILIDADES
+    ========================================= */
+    .container {
+      width: 88%;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .container--narrow {
+      width: 88%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Etiqueta superior de sección */
+    .label {
+      display: block;
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--verde);
+      opacity: .65;
+      margin-bottom: .9rem;
+    }
+
+    /* Títulos editoriales */
+    .heading-xl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--verde);
+    }
+    .heading-xl em { font-style: italic; font-weight: 300; }
+
+    .heading-lg {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 400;
+      line-height: 1.18;
+      color: var(--verde);
+    }
+    .heading-lg em { font-style: italic; font-weight: 300; }
+
+    .heading-md {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 500;
+      color: var(--verde);
+      line-height: 1.25;
+    }
+
+    /* Línea divisoria fina */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--linea);
+      margin: 1.8rem 0;
+    }
+
+    .divider--short {
+      width: 48px;
+      background: var(--arena);
+      margin: 1.4rem 0;
+    }
+
+    /* Botones */
+    .btn {
+      display: inline-block;
+      padding: .85rem 2.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-radius: var(--radio);
+      cursor: pointer;
+      transition: background var(--trans), color var(--trans),
+                  box-shadow var(--trans), transform var(--trans);
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--verde);
+      color: var(--blanco);
+      border: 1.5px solid var(--verde);
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--verde);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--verde);
+      border: 1.5px solid var(--verde);
+    }
+    .btn-outline:hover {
+      background: var(--verde);
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--blanco);
+      border: 1.5px solid rgba(245,245,245,.55);
+      padding: .75rem 1.9rem;
+    }
+    .btn-ghost:hover {
+      background: rgba(245,245,245,.12);
+      border-color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: var(--blanco);
+      color: var(--verde);
+      border: 1.5px solid var(--blanco);
+    }
+    .btn-white:hover {
+      background: transparent;
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      padding: 1rem 0;
+      transition: background var(--trans), box-shadow var(--trans);
+    }
+    .navbar.scrolled {
+      background: rgba(245,245,245,.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,.06);
+    }
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar__logo img {
+      height: 46px;
+      width: auto;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+    .navbar__right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .navbar__link {
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: rgba(245,245,245,.85);
+      transition: opacity var(--trans);
+    }
+    .navbar.scrolled .navbar__link { color: var(--verde); }
+    .navbar__link:hover { opacity: .6; }
+
+    .navbar__cta {
+      font-size: .75rem;
+      padding: .5rem 1.3rem;
+      border-radius: var(--radio);
+      background: var(--arena);
+      color: var(--verde);
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: background var(--trans), color var(--trans);
+    }
+    .navbar__cta:hover { background: var(--verde); color: var(--blanco); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--blanco);
+      border-radius: 2px;
+      transition: background var(--trans);
+    }
+    .navbar.scrolled .hamburger span { background: var(--verde); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--verde);
+      z-index: 1000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.4rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      color: var(--blanco);
+      transition: color var(--trans);
+    }
+    .mobile-menu a:hover { color: var(--arena); }
+    .mobile-close {
+      position: absolute;
+      top: 1.4rem; right: 1.4rem;
+      background: none; border: none;
+      color: var(--blanco);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.48) saturate(.75);
+      transform: scale(1.04);
+      animation: heroZoom 16s ease-out forwards;
+    }
+    @keyframes heroZoom {
+      to { transform: scale(1); }
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(31,58,46,.35) 0%,
+        rgba(31,58,46,.15) 50%,
+        rgba(0,0,0,.3) 100%
+      );
+    }
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      color: var(--blanco);
+      max-width: 680px;
+      padding: 0 1rem;
+      animation: fadeUp .9s ease both;
+      animation-delay: .25s;
+      opacity: 0;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero__logo {
+      margin-bottom: 2.5rem;
+    }
+    .hero__logo img {
+      height: 70px;
+      width: auto;
+      object-fit: contain;
+      mix-blend-mode: screen;
+      margin: 0 auto;
+    }
+    .hero__eyebrow {
+      display: block;
+      font-size: .7rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--arena);
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+    .hero__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--blanco);
+      margin-bottom: 1.2rem;
+    }
+    .hero__title em {
+      font-style: italic;
+      color: var(--arena);
+    }
+    .hero__sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(245,245,245,.8);
+      line-height: 1.75;
+      margin-bottom: 2.4rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.5);
+      font-size: .65rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero__scroll-line {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,.35);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:.35; height:36px; }
+      50%      { opacity:.9;  height:48px; }
+    }
+
+    /* =========================================
+       INTRO CATÁLOGO
+    ========================================= */
+    .intro-catalogo {
+      padding: 6rem 0 3rem;
+      text-align: center;
+    }
+    .intro-catalogo p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gris);
+      max-width: 580px;
+      margin: 1.4rem auto 0;
+      line-height: 1.85;
+    }
+
+    /* =========================================
+       BLOQUES EDITORIALES DE SERVICIOS
+    ========================================= */
+    .catalogo {
+      padding: 2rem 0 6rem;
+    }
+
+    /* Bloque individual de servicio */
+    .servicio-bloque {
+      padding: 5rem 0;
+      border-top: 1px solid var(--linea);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* Columna izquierda: numeración y metadatos */
+    .servicio-bloque__meta {
+      position: sticky;
+      top: 7rem;
+    }
+
+    .servicio-bloque__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: var(--arena);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .servicio-bloque__tag {
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--verde);
+      opacity: .6;
+      font-weight: 500;
+    }
+
+    .servicio-bloque__duraciones {
+      margin-top: 2rem;
+    }
+
+    .servicio-bloque__duraciones p {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gris-l);
+      font-weight: 500;
+      margin-bottom: .6rem;
+    }
+
+    .servicio-bloque__duraciones ul li {
+      font-size: .88rem;
+      color: var(--gris);
+      font-weight: 300;
+      padding: .25rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .servicio-bloque__duraciones ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--arena);
+      font-size: .75rem;
+    }
+
+    /* Columna derecha: contenido editorial */
+    .servicio-bloque__body {}
+
+    .servicio-bloque__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+      font-weight: 400;
+      color: var(--verde);
+      line-height: 1.15;
+      margin-bottom: 1.6rem;
+    }
+
+    .servicio-bloque__title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .servicio-bloque__desc {
+      font-size: .98rem;
+      font-weight: 300;
+      color: var(--gris);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .servicio-bloque__desc p + p { margin-top: 1rem; }
+
+    .servicio-bloque__beneficios {
+      margin-bottom: 2.4rem;
+    }
+
+    .servicio-bloque__beneficios-title {
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--verde);
+      opacity: .65;
+      font-weight: 500;
+      margin-bottom: .9rem;
+    }
+
+    .servicio-bloque__beneficios ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .35rem 2rem;
+    }
+
+    .servicio-bloque__beneficios ul li {
+      font-size: .88rem;
+      color: var(--negro);
+      font-weight: 300;
+      padding-left: 1.1rem;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .servicio-bloque__beneficios ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--arena);
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    /* =========================================
+       PROGRAMAS
+    ========================================= */
+    .programas {
+      padding: 6rem 0;
+      background: var(--verde);
+      color: var(--blanco);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .programas::before {
+      content: 'PROCESO';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(6rem, 14vw, 14rem);
+      font-weight: 300;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,.04);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .programas__header {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .programas__header .label    { color: var(--arena); opacity: 1; }
+    .programas__header .heading-xl { color: var(--blanco); }
+
+    .programas__header p {
+      font-size: .95rem;
+      font-weight: 300;
+      color: rgba(245,245,245,.7);
+      max-width: 520px;
+      margin: 1.2rem auto 0;
+      line-height: 1.8;
+    }
+
+    .programas__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+
+    .programa-card {
+      border: 1px solid rgba(216,195,165,.2);
+      border-radius: var(--radio);
+      padding: 2.8rem 2.2rem;
+      transition: border-color var(--trans), background var(--trans);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .programa-card:hover {
+      border-color: rgba(216,195,165,.5);
+      background: rgba(255,255,255,.04);
+    }
+
+    .programa-card__sesiones {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: var(--arena);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .programa-card__label {
+      font-size: .68rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(216,195,165,.6);
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+    }
+
+    .programa-card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--blanco);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .programa-card__desc {
+      font-size: .88rem;
+      font-weight: 300;
+      color: rgba(245,245,245,.65);
+      line-height: 1.8;
+      flex-grow: 1;
+      margin-bottom: 2rem;
+    }
+
+    .programa-card__items {
+      margin-bottom: 2rem;
+    }
+
+    .programa-card__items li {
+      font-size: .82rem;
+      color: rgba(245,245,245,.7);
+      font-weight: 300;
+      padding: .22rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .programa-card__items li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--arena);
+      font-size: .72rem;
+    }
+
+    .programa-card .btn {
+      font-size: .75rem;
+      padding: .72rem 1.5rem;
+      align-self: flex-start;
+    }
+
+    /* =========================================
+       FILOSOFÍA
+    ========================================= */
+    .filosofia {
+      padding: 7rem 0;
+      background: var(--arena-xs);
+    }
+
+    .filosofia__inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .filosofia__sidebar {
+      position: sticky;
+      top: 7rem;
+    }
+
+    .filosofia__sidebar .heading-xl {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .filosofia__sidebar p {
+      font-size: .9rem;
+      font-weight: 300;
+      color: var(--gris);
+      margin-top: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .filosofia__pilares {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pilar {
+      padding: 2.2rem 0;
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .pilar:first-child { border-top: 1px solid var(--linea); }
+
+    .pilar__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--arena);
+      margin-bottom: .5rem;
+    }
+
+    .pilar__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--verde);
+      margin-bottom: .8rem;
+    }
+
+    .pilar__text {
+      font-size: .92rem;
+      font-weight: 300;
+      color: var(--gris);
+      line-height: 1.85;
+    }
+
+    /* =========================================
+       LLAMADO FINAL
+    ========================================= */
+    .cta-final {
+      padding: 8rem 0;
+      background: var(--blanco);
+      text-align: center;
+    }
+
+    .cta-final__inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-final__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 300;
+      color: var(--verde);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+
+    .cta-final__title em {
+      font-style: italic;
+    }
+
+    .cta-final__sub {
+      font-size: .95rem;
+      font-weight: 300;
+      color: var(--gris);
+      line-height: 1.8;
+      margin-bottom: 2.8rem;
+    }
+
+    .cta-final__note {
+      margin-top: 1.6rem;
+      font-size: .8rem;
+      color: var(--gris-l);
+      font-weight: 300;
+    }
+
+    /* =========================================
+       WHATSAPP FLOTANTE
+    ========================================= */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 800;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.4);
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 32px rgba(37,211,102,.55);
+    }
+    .wa-float svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+    .wa-tooltip {
+      position: absolute;
+      right: 62px;
+      background: var(--negro);
+      color: var(--blanco);
+      font-size: .72rem;
+      font-weight: 400;
+      padding: .38rem .75rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--trans);
+    }
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    .footer {
+      background: var(--negro);
+      color: rgba(245,245,245,.55);
+      padding: 4rem 0 2rem;
+    }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .footer__logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1rem;
+    }
+    .footer__brand p {
+      font-size: .85rem;
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 240px;
+    }
+    .footer__col-title {
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--arena);
+      margin-bottom: 1.2rem;
+    }
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+    .footer__links a,
+    .footer__links span {
+      font-size: .85rem;
+      font-weight: 300;
+      transition: color var(--trans);
+    }
+    .footer__links a:hover { color: var(--blanco); }
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      font-size: .75rem;
+      font-weight: 300;
+    }
+    .footer__legal a {
+      color: rgba(245,245,245,.4);
+      transition: color var(--trans);
+    }
+    .footer__legal a:hover { color: var(--blanco); }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 960px) {
+      .servicio-bloque {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .servicio-bloque__meta {
+        position: static;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+      }
+      .servicio-bloque__duraciones { margin-top: 0; }
+      .filosofia__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .filosofia__sidebar { position: static; }
+      .programas__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar__right { display: none; }
+      .hamburger { display: flex; }
+      .servicio-bloque__beneficios ul { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer__bottom { flex-direction: column; gap: .8rem; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .servicio-bloque__meta { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       NAVBAR
+  ========================================= -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Pactiacalli — Inicio">
+          <img src="images/logo-pactiacalli.jpeg" alt="Pactiacalli logo" />
+        </a>
+        <div class="navbar__right">
+          <a class="navbar__link" href="index.html">Inicio</a>
+          <a class="navbar__link" href="index.html#nosotros">Nosotros</a>
+          <a class="navbar__link" href="index.html#galeria">Galería</a>
+          <a
+            class="navbar__cta"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Agendar sesión
+          </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
+    <a href="index.html"          onclick="closeMobile()">Inicio</a>
+    <a href="index.html#nosotros" onclick="closeMobile()">Nosotros</a>
+    <a href="index.html#galeria"  onclick="closeMobile()">Galería</a>
+    <a href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+       target="_blank" rel="noopener" style="color:var(--arena)">Agendar sesión</a>
+  </div>
+
+  <!-- =========================================
+       HERO
+  ========================================= -->
+  <header class="hero" id="inicio" aria-label="Catálogo de Servicios Pactiacalli">
+    <img
+      src="images/hero-servicios.jpg"
+      alt="Espacio de masoterapia profesional Pactiacalli, CDMX"
+      class="hero__bg"
+      loading="eager"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <div class="hero__logo">
+        <img src="images/logo-pactiacalli.jpeg" alt="Pactiacalli" />
+      </div>
+      <span class="hero__eyebrow">Pactiacalli · CDMX · Masoterapia Profesional</span>
+      <h1 class="hero__title">
+        Catálogo de Servicios<br /><em>Pactiacalli®</em>
+      </h1>
+      <p class="hero__sub">
+        Masoterapia profesional con diagnóstico corporal personalizado.<br />
+        Cada sesión, diseñada para ti.
+      </p>
+      <a
+        class="btn btn-ghost"
+        href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+        target="_blank" rel="noopener"
+        aria-label="Agendar sesión por WhatsApp"
+      >
+        Agendar sesión
+      </a>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span>Catálogo</span>
+    </div>
+  </header>
+
+  <!-- =========================================
+       INTRO CATÁLOGO
+  ========================================= -->
+  <section class="intro-catalogo" aria-labelledby="catalogo-intro-title">
+    <div class="container--narrow">
+      <div class="reveal">
+        <span class="label">Nuestros servicios</span>
+        <h2 class="heading-xl" id="catalogo-intro-title">
+          Trabajo corporal<br /><em>con criterio clínico</em>
+        </h2>
+        <p>
+          Cada servicio que ofrecemos parte de un diagnóstico previo. No trabajamos
+          con protocolos genéricos. Cada sesión es una respuesta específica a lo que
+          tu cuerpo necesita en ese momento. Aquí encontrarás una descripción precisa
+          de lo que hacemos, cómo lo hacemos y para quién está indicado.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CATÁLOGO — BLOQUES EDITORIALES
+  ========================================= -->
+  <main class="catalogo" id="catalogo" aria-label="Catálogo de servicios">
+    <div class="container">
+
+      <!-- ─── 01 Terapia Corporal Profunda ─── -->
+      <article class="servicio-bloque reveal" aria-labelledby="srv-01">
+
+        <div class="servicio-bloque__meta">
+          <span class="servicio-bloque__num" aria-hidden="true">01</span>
+          <span class="servicio-bloque__tag">Terapéutico · Estructural</span>
+          <div class="servicio-bloque__duraciones">
+            <p>Duración disponible</p>
+            <ul aria-label="Duraciones disponibles">
+              <li>60 minutos — Sesión enfocada</li>
+              <li>90 minutos — Sesión completa</li>
+              <li>120 minutos — Sesión extendida</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="servicio-bloque__body">
+          <h2 class="servicio-bloque__title" id="srv-01">
+            Terapia Corporal <em>Profunda</em>
+          </h2>
+          <div class="divider"></div>
+          <div class="servicio-bloque__desc">
+            <p>
+              La Terapia Corporal Profunda es nuestro abordaje más clínico. Está diseñada
+              para personas que cargan tensiones crónicas acumuladas en tejidos profundos:
+              fascia, músculo y articulaciones. No se trata de presión indiscriminada,
+              sino de un trabajo preciso, capa por capa, con criterio terapéutico y
+              respeto por los límites del organismo.
+            </p>
+            <p>
+              Es una sesión exigente para el cuerpo y también para quien la recibe.
+              Los cambios son reales y sostenidos. Recomendada especialmente para quienes
+              llevan semanas o meses con dolor muscular, contracturas, o una sensación
+              constante de rigidez que no cede con el reposo.
+            </p>
+          </div>
+          <div class="servicio-bloque__beneficios">
+            <p class="servicio-bloque__beneficios-title">Lo que puedes esperar</p>
+            <ul aria-label="Beneficios de Terapia Corporal Profunda">
+              <li>Liberación de contracturas crónicas</li>
+              <li>Reducción del dolor muscular profundo</li>
+              <li>Restauración del rango de movimiento</li>
+              <li>Trabajo sobre puntos gatillo activos</li>
+              <li>Reequilibrio fascial y postural</li>
+              <li>Mejora del sueño y la recuperación</li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Terapia%20Corporal%20Profunda%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Solicitar esta sesión
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── 02 Masaje Integral Pactiacalli® ─── -->
+      <article class="servicio-bloque reveal" aria-labelledby="srv-02">
+
+        <div class="servicio-bloque__meta">
+          <span class="servicio-bloque__num" aria-hidden="true">02</span>
+          <span class="servicio-bloque__tag">Integral · Firma</span>
+          <div class="servicio-bloque__duraciones">
+            <p>Duración disponible</p>
+            <ul aria-label="Duraciones disponibles">
+              <li>90 minutos — Sesión estándar</li>
+              <li>120 minutos — Sesión profunda</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="servicio-bloque__body">
+          <h2 class="servicio-bloque__title" id="srv-02">
+            Masaje Integral <em>Pactiacalli®</em>
+          </h2>
+          <div class="divider"></div>
+          <div class="servicio-bloque__desc">
+            <p>
+              Nuestra sesión insignia. El Masaje Integral Pactiacalli® es el resultado de
+              años de práctica clínica y refinamiento técnico. Combina lo mejor de las
+              tradiciones de trabajo corporal con un enfoque sistémico que aborda el
+              organismo en su totalidad: sistema muscular, conectivo, nervioso y visceral.
+            </p>
+            <p>
+              No es un masaje de relajación convencional, aunque la relajación sea una
+              consecuencia natural. Es un trabajo metódico, secuenciado y personalizado
+              que responde a lo que el diagnóstico inicial revela. Cada sesión es única.
+            </p>
+          </div>
+          <div class="servicio-bloque__beneficios">
+            <p class="servicio-bloque__beneficios-title">Lo que puedes esperar</p>
+            <ul aria-label="Beneficios del Masaje Integral Pactiacalli">
+              <li>Equilibrio global del sistema muscular</li>
+              <li>Reducción profunda del estrés acumulado</li>
+              <li>Trabajo abdominal y diafragmático</li>
+              <li>Integración cráneo-sacral suave</li>
+              <li>Sensación de ligereza y presencia</li>
+              <li>Recuperación del sistema nervioso</li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Masaje%20Integral%20Pactiacalli%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Solicitar esta sesión
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── 03 Ritual Corporal Ancestral ─── -->
+      <article class="servicio-bloque reveal" aria-labelledby="srv-03">
+
+        <div class="servicio-bloque__meta">
+          <span class="servicio-bloque__num" aria-hidden="true">03</span>
+          <span class="servicio-bloque__tag">Ritual · Reconexión</span>
+          <div class="servicio-bloque__duraciones">
+            <p>Duración disponible</p>
+            <ul aria-label="Duraciones disponibles">
+              <li>90 minutos — Ritual completo</li>
+              <li>120 minutos — Ritual extendido</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="servicio-bloque__body">
+          <h2 class="servicio-bloque__title" id="srv-03">
+            Ritual Corporal <em>Ancestral</em>
+          </h2>
+          <div class="divider"></div>
+          <div class="servicio-bloque__desc">
+            <p>
+              El Ritual Corporal Ancestral es nuestra sesión más profunda en términos de
+              presencia y experiencia. Está fundamentado en prácticas mesoamericanas de
+              trabajo corporal, adaptadas con rigor contemporáneo: sin misticismo
+              innecesario, sin promesas vacías. Sólo el trabajo del cuerpo y la
+              conciencia de quien lo habita.
+            </p>
+            <p>
+              Aceites naturales de origen medicinal, secuencias de movimiento específicas
+              y un espacio de silencio consciente crean una experiencia que va más allá
+              de la técnica. Indicado para personas que atraviesan períodos de agotamiento
+              profundo, desconexión o transiciones vitales significativas.
+            </p>
+          </div>
+          <div class="servicio-bloque__beneficios">
+            <p class="servicio-bloque__beneficios-title">Lo que puedes esperar</p>
+            <ul aria-label="Beneficios del Ritual Corporal Ancestral">
+              <li>Reintegración soma-mente</li>
+              <li>Liberación de tensión emocional retenida</li>
+              <li>Estimulación con aceites medicinales</li>
+              <li>Respiración guiada y consciente</li>
+              <li>Sensación de arraigo y quietud</li>
+              <li>Experiencia única y profundamente personal</li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Ritual%20Corporal%20Ancestral%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Solicitar esta sesión
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── 04 Drenaje y Desinflamación ─── -->
+      <article class="servicio-bloque reveal" aria-labelledby="srv-04">
+
+        <div class="servicio-bloque__meta">
+          <span class="servicio-bloque__num" aria-hidden="true">04</span>
+          <span class="servicio-bloque__tag">Linfático · Terapéutico</span>
+          <div class="servicio-bloque__duraciones">
+            <p>Duración disponible</p>
+            <ul aria-label="Duraciones disponibles">
+              <li>60 minutos — Sesión enfocada</li>
+              <li>90 minutos — Sesión completa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="servicio-bloque__body">
+          <h2 class="servicio-bloque__title" id="srv-04">
+            Drenaje y <em>Desinflamación</em>
+          </h2>
+          <div class="divider"></div>
+          <div class="servicio-bloque__desc">
+            <p>
+              El sistema linfático es uno de los más olvidados del organismo y uno de los
+              más determinantes para la salud general. Este protocolo trabaja directamente
+              sobre él mediante maniobras manuales lentas, rítmicas y precisas, diseñadas
+              para activar el drenaje linfático natural sin interferir con otros sistemas.
+            </p>
+            <p>
+              Indicado para personas con retención de líquidos, inflamación sistémica,
+              post-cirugías, sinusitis recurrente o simplemente quienes sienten un
+              cuerpo "pesado" que no responde al reposo. Los resultados son visibles
+              desde la primera sesión.
+            </p>
+          </div>
+          <div class="servicio-bloque__beneficios">
+            <p class="servicio-bloque__beneficios-title">Lo que puedes esperar</p>
+            <ul aria-label="Beneficios de Drenaje y Desinflamación">
+              <li>Activación del sistema linfático</li>
+              <li>Reducción de retención de líquidos</li>
+              <li>Alivio de la inflamación sistémica</li>
+              <li>Mejora de la circulación periférica</li>
+              <li>Apoyo en procesos post-quirúrgicos</li>
+              <li>Sensación inmediata de ligereza</li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Drenaje%20y%20Desinflamaci%C3%B3n%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Solicitar esta sesión
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── 05 Recuperación Deportiva ─── -->
+      <article class="servicio-bloque reveal" aria-labelledby="srv-05">
+
+        <div class="servicio-bloque__meta">
+          <span class="servicio-bloque__num" aria-hidden="true">05</span>
+          <span class="servicio-bloque__tag">Deportivo · Funcional</span>
+          <div class="servicio-bloque__duraciones">
+            <p>Duración disponible</p>
+            <ul aria-label="Duraciones disponibles">
+              <li>60 minutos — Post-entreno</li>
+              <li>90 minutos — Recuperación completa</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="servicio-bloque__body">
+          <h2 class="servicio-bloque__title" id="srv-05">
+            Recuperación <em>Deportiva</em>
+          </h2>
+          <div class="divider"></div>
+          <div class="servicio-bloque__desc">
+            <p>
+              Diseñado para personas con demanda física alta: atletas, corredores,
+              practicantes de artes marciales, ciclistas, nadadores. El cuerpo activo
+              acumula tensiones específicas que requieren un abordaje igualmente
+              específico. No es un masaje deportivo genérico, es un protocolo construido
+              desde la comprensión de los patrones de uso muscular de cada persona.
+            </p>
+            <p>
+              El objetivo es reducir el tiempo de recuperación, prevenir lesiones
+              por sobrecarga y mantener el rendimiento óptimo a largo plazo. Puede
+              aplicarse como sesión post-competencia, post-entreno intenso o como
+              mantenimiento preventivo dentro de un ciclo de entrenamiento.
+            </p>
+          </div>
+          <div class="servicio-bloque__beneficios">
+            <p class="servicio-bloque__beneficios-title">Lo que puedes esperar</p>
+            <ul aria-label="Beneficios de Recuperación Deportiva">
+              <li>Reducción del tiempo de recuperación</li>
+              <li>Trabajo de tejido muscular post-esfuerzo</li>
+              <li>Estiramientos asistidos especializados</li>
+              <li>Prevención de lesiones por sobrecarga</li>
+              <li>Mejora del rendimiento sostenido</li>
+              <li>Equilibrio entre zonas de trabajo y descanso</li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Recuperaci%C3%B3n%20Deportiva%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Solicitar esta sesión
+          </a>
+        </div>
+      </article>
+
+      <!-- ─── 06 Moldeo y Definición Corporal ─── -->
+      <article class="servicio-bloque reveal" aria-labelledby="srv-06">
+
+        <div class="servicio-bloque__meta">
+          <span class="servicio-bloque__num" aria-hidden="true">06</span>
+          <span class="servicio-bloque__tag">Estético · Terapéutico</span>
+          <div class="servicio-bloque__duraciones">
+            <p>Duración disponible</p>
+            <ul aria-label="Duraciones disponibles">
+              <li>60 minutos — Zona específica</li>
+              <li>90 minutos — Cuerpo completo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="servicio-bloque__body">
+          <h2 class="servicio-bloque__title" id="srv-06">
+            Moldeo y Definición <em>Corporal</em>
+          </h2>
+          <div class="divider"></div>
+          <div class="servicio-bloque__desc">
+            <p>
+              Un protocolo que integra técnica terapéutica y criterio estético para
+              trabajar la composición corporal desde afuera hacia adentro. No es un
+              tratamiento de spa, es un trabajo manual serio que actúa sobre tejido
+              adiposo, muscular y conectivo con herramientas y maniobras específicas.
+            </p>
+            <p>
+              Los resultados óptimos se obtienen en proceso: a partir de cuatro sesiones
+              el organismo comienza a responder de manera sostenida. Recomendado como
+              parte de un programa, no como sesión aislada. Puede complementarse con
+              otros servicios del catálogo según el diagnóstico inicial.
+            </p>
+          </div>
+          <div class="servicio-bloque__beneficios">
+            <p class="servicio-bloque__beneficios-title">Lo que puedes esperar</p>
+            <ul aria-label="Beneficios de Moldeo y Definición Corporal">
+              <li>Reducción de grasa localizada</li>
+              <li>Tonificación y reafirmación de tejidos</li>
+              <li>Maderoterapia profesional</li>
+              <li>Mejora de la circulación en zonas tratadas</li>
+              <li>Redefinición progresiva de silueta</li>
+              <li>Complemento ideal a hábitos activos</li>
+            </ul>
+          </div>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Moldeo%20y%20Definici%C3%B3n%20Corporal%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Solicitar esta sesión
+          </a>
+        </div>
+      </article>
+
+    </div><!-- /container catálogo -->
+  </main>
+
+  <!-- =========================================
+       PROGRAMAS / EXPERIENCIAS
+  ========================================= -->
+  <section class="programas" id="programas" aria-labelledby="programas-title">
+    <div class="container">
+
+      <div class="programas__header reveal">
+        <span class="label">Colección de programas</span>
+        <h2 class="heading-xl" id="programas-title">
+          Proceso, no <em>evento</em>
+        </h2>
+        <p>
+          Un cuerpo cambia cuando se le da tiempo y continuidad. Nuestros programas
+          están diseñados para acompañarte en un proceso real de transformación,
+          no para ofrecer soluciones inmediatas que no existen.
+        </p>
+      </div>
+
+      <div class="programas__grid">
+
+        <!-- Programa 4 sesiones -->
+        <article class="programa-card reveal" aria-labelledby="prog-4">
+          <span class="programa-card__sesiones" aria-hidden="true">4</span>
+          <span class="programa-card__label">Sesiones</span>
+          <h3 class="programa-card__title" id="prog-4">Programa Inicio</h3>
+          <p class="programa-card__desc">
+            El punto de partida. Cuatro sesiones que permiten al cuerpo identificar
+            el trabajo, comenzar a soltar patrones de tensión establecidos y
+            responder con cambios tangibles y medibles.
+          </p>
+          <ul class="programa-card__items" aria-label="Incluye">
+            <li>Diagnóstico corporal inicial</li>
+            <li>Protocolo personalizado por sesión</li>
+            <li>Seguimiento de evolución</li>
+            <li>Recomendaciones de hábitos corporales</li>
+          </ul>
+          <a
+            class="btn btn-ghost"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Programa%204%20sesiones%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Consultar programa
+          </a>
+        </article>
+
+        <!-- Programa 6 sesiones -->
+        <article class="programa-card reveal" style="transition-delay:.1s" aria-labelledby="prog-6">
+          <span class="programa-card__sesiones" aria-hidden="true">6</span>
+          <span class="programa-card__label">Sesiones</span>
+          <h3 class="programa-card__title" id="prog-6">Programa Proceso</h3>
+          <p class="programa-card__desc">
+            El programa más equilibrado entre profundidad y tiempo. Seis sesiones
+            permiten consolidar los cambios iniciales, trabajar en capas más profundas
+            y establecer una nueva línea base corporal.
+          </p>
+          <ul class="programa-card__items" aria-label="Incluye">
+            <li>Todo lo del Programa Inicio</li>
+            <li>Reevaluación a mitad del proceso</li>
+            <li>Integración de técnicas complementarias</li>
+            <li>Ajuste de protocolo según evolución</li>
+          </ul>
+          <a
+            class="btn btn-ghost"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Programa%206%20sesiones%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Consultar programa
+          </a>
+        </article>
+
+        <!-- Programa 8 sesiones -->
+        <article class="programa-card reveal" style="transition-delay:.2s" aria-labelledby="prog-8">
+          <span class="programa-card__sesiones" aria-hidden="true">8</span>
+          <span class="programa-card__label">Sesiones</span>
+          <h3 class="programa-card__title" id="prog-8">Programa Transformación</h3>
+          <p class="programa-card__desc">
+            Para quienes están comprometidos con un cambio profundo y sostenido.
+            Ocho sesiones estructuradas en fases permiten trabajar con el cuerpo
+            de manera integral, sistemática y con resultados que perduran.
+          </p>
+          <ul class="programa-card__items" aria-label="Incluye">
+            <li>Todo lo del Programa Proceso</li>
+            <li>Trabajo en fases estructuradas</li>
+            <li>Sesión de cierre y plan de mantenimiento</li>
+            <li>Prioridad en agendamiento continuo</li>
+          </ul>
+          <a
+            class="btn btn-ghost"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Programa%208%20sesiones%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Consultar programa
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FILOSOFÍA
+  ========================================= -->
+  <section class="filosofia" id="filosofia" aria-labelledby="filosofia-title">
+    <div class="container">
+      <div class="filosofia__inner">
+
+        <div class="filosofia__sidebar reveal">
+          <span class="label">Nuestra forma de trabajar</span>
+          <h2 class="heading-xl" id="filosofia-title">
+            Cuatro <em>principios</em>
+          </h2>
+          <p>
+            Lo que nos diferencia no es sólo lo que hacemos,
+            sino la manera en que lo hacemos. Estos principios
+            guían cada sesión que ofrecemos.
+          </p>
+        </div>
+
+        <div class="filosofia__pilares" role="list" aria-label="Principios de Pactiacalli">
+
+          <div class="pilar reveal" role="listitem">
+            <span class="pilar__num">I</span>
+            <h3 class="pilar__title">Diagnóstico antes de protocolo</h3>
+            <p class="pilar__text">
+              Ninguna sesión comienza sin una evaluación previa. Observamos,
+              preguntamos, palpamos. Construimos un mapa de lo que el cuerpo
+              necesita antes de decidir cómo trabajarlo. La improvisación no
+              tiene lugar aquí.
+            </p>
+          </div>
+
+          <div class="pilar reveal" style="transition-delay:.08s" role="listitem">
+            <span class="pilar__num">II</span>
+            <h3 class="pilar__title">Personalización total</h3>
+            <p class="pilar__text">
+              No existe una sesión estándar en Pactiacalli. El protocolo se
+              construye cada vez, para ese cuerpo, en ese momento. La historia
+              de tensiones, hábitos y condición general de cada persona determina
+              el trabajo. Nunca al revés.
+            </p>
+          </div>
+
+          <div class="pilar reveal" style="transition-delay:.16s" role="listitem">
+            <span class="pilar__num">III</span>
+            <h3 class="pilar__title">Técnica profesional</h3>
+            <p class="pilar__text">
+              Formación continua, criterio clínico y dominio técnico depurado.
+              Cada maniobra tiene un propósito. Cada secuencia responde a una
+              lógica terapéutica. Trabajamos con precisión, no con fuerza.
+            </p>
+          </div>
+
+          <div class="pilar reveal" style="transition-delay:.24s" role="listitem">
+            <span class="pilar__num">IV</span>
+            <h3 class="pilar__title">Respeto al cuerpo</h3>
+            <p class="pilar__text">
+              El cuerpo es el límite y el guía. Escuchamos sus respuestas durante
+              la sesión y ajustamos en tiempo real. La seguridad y la integridad
+              del proceso son innegociables. Trabajamos con el cuerpo, nunca
+              contra él.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       LLAMADO FINAL A LA ACCIÓN
+  ========================================= -->
+  <section class="cta-final" aria-labelledby="cta-title">
+    <div class="cta-final__inner reveal">
+      <span class="label" style="display:block;text-align:center">El siguiente paso</span>
+      <h2 class="cta-final__title" id="cta-title">
+        Agenda tu diagnóstico corporal<br />
+        y descubre <em>qué necesita tu cuerpo.</em>
+      </h2>
+      <p class="cta-final__sub">
+        No hace falta saber qué servicio elegir. Cuéntanos cómo te sientes
+        y en qué zona de tu cuerpo quieres trabajar. Nosotros te orientamos.
+      </p>
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/525637091144?text=Hola%2C%20quiero%20agendar%20mi%20diagn%C3%B3stico%20corporal%20en%20Pactiacalli."
+        target="_blank" rel="noopener"
+        aria-label="Agendar diagnóstico corporal por WhatsApp"
+      >
+        Agendar diagnóstico corporal
+      </a>
+      <p class="cta-final__note">
+        Atención: Lunes a Sábado, 9:00 – 20:00 h · CDMX
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="images/logo-pactiacalli.jpeg" alt="Pactiacalli logo" />
+          </div>
+          <p>
+            Masoterapia profesional terapéutica y ritual.<br />
+            Diagnóstico corporal · Técnica clínica · CDMX
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Servicios</p>
+          <nav class="footer__links" aria-label="Servicios">
+            <a href="#srv-01">Terapia Corporal Profunda</a>
+            <a href="#srv-02">Masaje Integral Pactiacalli®</a>
+            <a href="#srv-03">Ritual Corporal Ancestral</a>
+            <a href="#srv-04">Drenaje y Desinflamación</a>
+            <a href="#srv-05">Recuperación Deportiva</a>
+            <a href="#srv-06">Moldeo y Definición Corporal</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Contacto</p>
+          <nav class="footer__links" aria-label="Información de contacto">
+            <span>📍 Ciudad de México</span>
+            <a href="tel:525637091144">📱 56 3709 1144</a>
+            <a
+              href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+              target="_blank" rel="noopener"
+            >
+              WhatsApp directo
+            </a>
+            <a href="index.html">Sitio principal</a>
+            <a href="#" style="opacity:.45;cursor:default">Aviso de Privacidad</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> Pactiacalli. Todos los derechos reservados.</p>
+        <div class="footer__legal">
+          <a href="#">Aviso de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       BOTÓN FLOTANTE WHATSAPP
+  ========================================= -->
+  <a
+    class="wa-float"
+    href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+    target="_blank"
+    rel="noopener"
+    aria-label="Contactar a Pactiacalli por WhatsApp"
+  >
+    <span class="wa-tooltip" aria-hidden="true">Escríbenos</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+  <script>
+    // --- Año dinámico ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- Navbar scroll ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // --- Menú hamburguesa ---
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    mobileClose.addEventListener('click', closeMobile);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMobile();
+    });
+
+    // --- Scroll reveal ---
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
