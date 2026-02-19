@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pactiacalli · Masoterapia Profesional Terapéutica y Ritual · CDMX</title>
+  <meta name="description" content="Pactiacalli ofrece masoterapia profesional terapéutica y ritual en CDMX. Diagnóstico corporal personalizado, técnicas clínicas y experiencia de bienestar profundo. Agenda tu sesión hoy." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================
+       VARIABLES & RESET
+    ========================================= */
+    :root {
+      --verde:    #1F3A2E;
+      --verde-m:  #2a5040;
+      --arena:    #D8C3A5;
+      --arena-l:  #ede3d4;
+      --blanco:   #F5F5F5;
+      --negro:    #1A1A1A;
+      --gris:     #6b6b6b;
+      --sombra:   0 8px 40px rgba(31,58,46,.12);
+      --sombra-h: 0 16px 56px rgba(31,58,46,.2);
+      --radio:    4px;
+      --trans:    .35s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--blanco);
+      color: var(--negro);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a   { color: inherit; text-decoration: none; }
+    ul  { list-style: none; }
+
+    /* =========================================
+       UTILIDADES
+    ========================================= */
+    .container {
+      width: 90%;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--verde);
+      opacity: .75;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--verde);
+    }
+
+    .section-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .85rem 2.2rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: var(--radio);
+      cursor: pointer;
+      transition: background var(--trans), color var(--trans),
+                  box-shadow var(--trans), transform var(--trans);
+    }
+
+    .btn-primary {
+      background: var(--verde);
+      color: var(--blanco);
+      border: 2px solid var(--verde);
+    }
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--verde);
+      box-shadow: var(--sombra-h);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--verde);
+      border: 1.5px solid var(--verde);
+    }
+    .btn-outline:hover {
+      background: var(--verde);
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      background: var(--blanco);
+      color: var(--verde);
+      border: 2px solid var(--blanco);
+    }
+    .btn-white:hover {
+      background: transparent;
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      padding: 1.1rem 0;
+      transition: background var(--trans), box-shadow var(--trans);
+    }
+
+    .navbar.scrolled {
+      background: rgba(245,245,245,.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,.07);
+    }
+
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar__logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .navbar__links {
+      display: flex;
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .navbar__links a {
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blanco);
+      transition: opacity var(--trans);
+    }
+
+    .navbar.scrolled .navbar__links a { color: var(--verde); }
+
+    .navbar__links a:hover { opacity: .65; }
+
+    .navbar__cta {
+      font-size: .78rem !important;
+      padding: .55rem 1.4rem;
+      border-radius: var(--radio);
+      background: var(--arena) !important;
+      color: var(--verde) !important;
+      font-weight: 500 !important;
+      transition: background var(--trans), transform var(--trans) !important;
+    }
+    .navbar__cta:hover { background: var(--verde) !important; color: var(--blanco) !important; transform: none; opacity: 1 !important; }
+
+    /* hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--blanco);
+      border-radius: 2px;
+      transition: background var(--trans);
+    }
+    .navbar.scrolled .hamburger span { background: var(--verde); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--verde);
+      z-index: 1000;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--blanco);
+      transition: color var(--trans);
+    }
+    .mobile-menu a:hover { color: var(--arena); }
+    .mobile-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      color: var(--blanco);
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      filter: brightness(.55) saturate(.8);
+      transform: scale(1.04);
+      animation: heroZoom 14s ease-out forwards;
+    }
+
+    @keyframes heroZoom {
+      to { transform: scale(1); }
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(31,58,46,.55) 0%,
+        rgba(31,58,46,.2) 60%,
+        rgba(0,0,0,.1) 100%
+      );
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      color: var(--blanco);
+      max-width: 620px;
+      animation: heroFadeUp .9s ease both;
+      animation-delay: .3s;
+      opacity: 0;
+    }
+
+    @keyframes heroFadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero__logo {
+      margin-bottom: 2.4rem;
+    }
+
+    .hero__logo img {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero__eyebrow {
+      font-size: .75rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--arena);
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .hero__headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
+      font-weight: 300;
+      line-height: 1.13;
+      margin-bottom: 1.4rem;
+      color: var(--blanco);
+    }
+
+    .hero__headline em {
+      font-style: italic;
+      color: var(--arena);
+    }
+
+    .hero__sub {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: rgba(245,245,245,.85);
+      max-width: 440px;
+      margin-bottom: 2.4rem;
+      line-height: 1.75;
+    }
+
+    .hero__cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.6);
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,.4);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: .4; height: 40px; }
+      50%      { opacity: 1;  height: 52px; }
+    }
+
+    /* =========================================
+       INTRO / FILOSOFÍA
+    ========================================= */
+    .intro {
+      padding: 7rem 0;
+      background: var(--blanco);
+    }
+
+    .intro__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .intro__text p {
+      color: var(--gris);
+      margin-top: 1.4rem;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .intro__text p + p { margin-top: 1rem; }
+
+    .intro__visual {
+      position: relative;
+    }
+
+    .intro__img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radio);
+    }
+
+    .intro__badge {
+      position: absolute;
+      bottom: -2rem;
+      left: -2rem;
+      background: var(--verde);
+      color: var(--blanco);
+      padding: 1.8rem 2rem;
+      border-radius: var(--radio);
+      text-align: center;
+    }
+
+    .intro__badge strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      display: block;
+      line-height: 1;
+    }
+
+    .intro__badge span {
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      opacity: .8;
+    }
+
+    /* =========================================
+       SERVICIOS
+    ========================================= */
+    .servicios {
+      padding: 7rem 0;
+      background: var(--arena-l);
+    }
+
+    .servicios__header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .servicios__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: var(--blanco);
+      border-radius: var(--radio);
+      padding: 2.2rem;
+      box-shadow: var(--sombra);
+      transition: transform var(--trans), box-shadow var(--trans);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-h);
+    }
+
+    .card__num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--arena);
+      line-height: 1;
+      margin-bottom: .8rem;
+    }
+
+    .card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--verde);
+      margin-bottom: .8rem;
+      line-height: 1.3;
+    }
+
+    .card__desc {
+      font-size: .9rem;
+      color: var(--gris);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+      line-height: 1.65;
+      flex-grow: 1;
+    }
+
+    .card__tecnicas {
+      margin-bottom: 1.6rem;
+    }
+
+    .card__tecnicas li {
+      font-size: .8rem;
+      color: var(--verde);
+      font-weight: 400;
+      padding: .2rem 0;
+      padding-left: 1rem;
+      position: relative;
+      opacity: .8;
+    }
+
+    .card__tecnicas li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--arena);
+    }
+
+    .card .btn {
+      font-size: .78rem;
+      padding: .7rem 1.4rem;
+      text-align: center;
+    }
+
+    /* =========================================
+       DIFERENCIADORES
+    ========================================= */
+    .diferenciadores {
+      padding: 7rem 0;
+      background: var(--verde);
+      color: var(--blanco);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diferenciadores::before {
+      content: 'PACTIACALLI';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 12vw, 12rem);
+      font-weight: 300;
+      letter-spacing: .1em;
+      color: rgba(255,255,255,.04);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .diferenciadores__header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .diferenciadores__header .section-title { color: var(--blanco); }
+    .diferenciadores__header .section-label { color: var(--arena); opacity: 1; }
+
+    .diferenciadores__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      position: relative;
+    }
+
+    .dif-item {
+      padding: 2rem;
+      border: 1px solid rgba(216,195,165,.2);
+      border-radius: var(--radio);
+      text-align: center;
+      transition: border-color var(--trans), background var(--trans);
+    }
+
+    .dif-item:hover {
+      border-color: rgba(216,195,165,.5);
+      background: rgba(255,255,255,.04);
+    }
+
+    .dif-item__icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .dif-item__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--arena);
+      margin-bottom: .6rem;
+    }
+
+    .dif-item__text {
+      font-size: .88rem;
+      color: rgba(245,245,245,.7);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .diferenciadores__cta {
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    /* =========================================
+       GALERÍA
+    ========================================= */
+    .galeria {
+      padding: 7rem 0;
+      background: var(--blanco);
+    }
+
+    .galeria__header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .galeria__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .galeria__item {
+      overflow: hidden;
+      border-radius: var(--radio);
+      aspect-ratio: 3/4;
+      position: relative;
+    }
+
+    .galeria__item:first-child {
+      grid-column: span 2;
+      aspect-ratio: auto;
+    }
+
+    .galeria__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .65s ease, filter .65s ease;
+      filter: saturate(.85);
+    }
+
+    .galeria__item:hover img {
+      transform: scale(1.06);
+      filter: saturate(1);
+    }
+
+    .galeria__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(31,58,46,.5) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity var(--trans);
+    }
+    .galeria__item:hover .galeria__overlay { opacity: 1; }
+
+    /* =========================================
+       TESTIMONIOS
+    ========================================= */
+    .testimonios {
+      padding: 7rem 0;
+      background: var(--arena-l);
+    }
+
+    .testimonios__header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .testimonios__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .testimonio {
+      background: var(--blanco);
+      padding: 2.4rem;
+      border-radius: var(--radio);
+      box-shadow: var(--sombra);
+      position: relative;
+    }
+
+    .testimonio::before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--arena);
+      position: absolute;
+      top: .5rem;
+      left: 1.8rem;
+      opacity: .6;
+    }
+
+    .testimonio__text {
+      font-size: .95rem;
+      color: var(--gris);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-top: 2.5rem;
+      font-style: italic;
+    }
+
+    .testimonio__divider {
+      width: 32px;
+      height: 1px;
+      background: var(--arena);
+      margin: 1.4rem 0;
+    }
+
+    .testimonio__autor {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--verde);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .testimonio__ciudad {
+      font-size: .78rem;
+      color: var(--gris);
+      font-weight: 300;
+    }
+
+    .testimonio__stars {
+      color: var(--arena);
+      font-size: .95rem;
+      margin-top: .4rem;
+    }
+
+    /* =========================================
+       CONTACTO
+    ========================================= */
+    .contacto {
+      padding: 7rem 0;
+      background: var(--blanco);
+    }
+
+    .contacto__grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .contacto__info p {
+      font-size: .95rem;
+      color: var(--gris);
+      font-weight: 300;
+      margin-top: 1.4rem;
+      line-height: 1.75;
+    }
+
+    .contacto__datos {
+      margin-top: 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contacto__dato {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+    }
+
+    .contacto__dato-icon {
+      font-size: 1.1rem;
+      margin-top: .1rem;
+      color: var(--verde);
+      flex-shrink: 0;
+    }
+
+    .contacto__dato-text {
+      font-size: .9rem;
+      color: var(--gris);
+      font-weight: 300;
+      line-height: 1.5;
+    }
+
+    .contacto__dato-text strong {
+      display: block;
+      font-weight: 500;
+      color: var(--negro);
+      font-size: .82rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: .1rem;
+    }
+
+    /* Form */
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .form__group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .form__label {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--verde);
+      opacity: .8;
+    }
+
+    .form__input,
+    .form__select,
+    .form__textarea {
+      width: 100%;
+      padding: .85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .9rem;
+      font-weight: 300;
+      color: var(--negro);
+      background: var(--blanco);
+      border: 1.5px solid rgba(31,58,46,.2);
+      border-radius: var(--radio);
+      outline: none;
+      transition: border-color var(--trans), box-shadow var(--trans);
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    .form__input:focus,
+    .form__select:focus,
+    .form__textarea:focus {
+      border-color: var(--verde);
+      box-shadow: 0 0 0 3px rgba(31,58,46,.08);
+    }
+
+    .form__textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .form__select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='8' viewBox='0 0 14 8'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%231F3A2E' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form__submit {
+      background: var(--verde);
+      color: var(--blanco);
+      border: none;
+      padding: 1rem 2.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: var(--radio);
+      cursor: pointer;
+      transition: background var(--trans), transform var(--trans);
+      align-self: flex-start;
+    }
+
+    .form__submit:hover {
+      background: var(--verde-m);
+      transform: translateY(-2px);
+    }
+
+    .form__whatsapp-note {
+      margin-top: .6rem;
+      font-size: .82rem;
+      color: var(--gris);
+      font-weight: 300;
+    }
+
+    .form__whatsapp-note a {
+      color: var(--verde);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .form__whatsapp-note a:hover { opacity: .7; }
+
+    /* =========================================
+       WHATSAPP FLOTANTE
+    ========================================= */
+    .wa-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 800;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37,211,102,.45);
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 32px rgba(37,211,102,.55);
+    }
+
+    .wa-float svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    .wa-tooltip {
+      position: absolute;
+      right: 66px;
+      background: var(--negro);
+      color: var(--blanco);
+      font-size: .75rem;
+      font-weight: 400;
+      padding: .4rem .8rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--trans);
+    }
+
+    .wa-float:hover .wa-tooltip { opacity: 1; }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    .footer {
+      background: var(--negro);
+      color: rgba(245,245,245,.65);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer__logo img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1rem;
+    }
+
+    .footer__brand p {
+      font-size: .88rem;
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 260px;
+    }
+
+    .footer__col-title {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--arena);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+
+    .footer__links a {
+      font-size: .88rem;
+      font-weight: 300;
+      transition: color var(--trans), opacity var(--trans);
+    }
+
+    .footer__links a:hover { color: var(--blanco); }
+
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      font-size: .78rem;
+      font-weight: 300;
+    }
+
+    .footer__legal a {
+      color: rgba(245,245,245,.5);
+      transition: color var(--trans);
+    }
+    .footer__legal a:hover { color: var(--blanco); }
+
+    /* =========================================
+       ANIMACIONES SCROLL (Intersection Observer)
+    ========================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 1024px) {
+      .diferenciadores__grid { grid-template-columns: repeat(2, 1fr); }
+      .servicios__grid        { grid-template-columns: repeat(2, 1fr); }
+      .intro__grid            { gap: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar__links { display: none; }
+      .hamburger     { display: flex; }
+
+      .intro__grid          { grid-template-columns: 1fr; }
+      .intro__badge         { left: 1rem; bottom: -1.5rem; }
+      .intro__visual        { margin-bottom: 2rem; }
+      .servicios__grid      { grid-template-columns: 1fr; }
+      .diferenciadores__grid { grid-template-columns: 1fr; }
+      .galeria__grid        { grid-template-columns: 1fr 1fr; }
+      .galeria__item:first-child { grid-column: span 2; aspect-ratio: 16/9; }
+      .testimonios__grid    { grid-template-columns: 1fr; }
+      .contacto__grid       { grid-template-columns: 1fr; gap: 3rem; }
+      .form__row            { grid-template-columns: 1fr; }
+      .footer__top          { grid-template-columns: 1fr; gap: 2rem; }
+      .footer__bottom       { flex-direction: column; gap: .8rem; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .galeria__grid { grid-template-columns: 1fr; }
+      .galeria__item:first-child { grid-column: span 1; aspect-ratio: 4/3; }
+      .hero__cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       NAVBAR
+  ========================================= -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegación principal">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="#" class="navbar__logo" aria-label="Pactiacalli inicio">
+          <img src="images/logo-pactiacalli.jpeg" alt="Pactiacalli logo" />
+        </a>
+        <ul class="navbar__links">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li>
+            <a class="navbar__cta"
+               href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+               target="_blank" rel="noopener">
+              Agendar sesión
+            </a>
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">✕</button>
+    <a href="#servicios"   onclick="closeMobile()">Servicios</a>
+    <a href="#nosotros"    onclick="closeMobile()">Nosotros</a>
+    <a href="#galeria"     onclick="closeMobile()">Galería</a>
+    <a href="#testimonios" onclick="closeMobile()">Testimonios</a>
+    <a href="#contacto"    onclick="closeMobile()">Contacto</a>
+    <a href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+       target="_blank" rel="noopener" style="color:var(--arena)">Agendar por WhatsApp</a>
+  </div>
+
+  <!-- =========================================
+       HERO
+  ========================================= -->
+  <header class="hero" id="inicio" aria-label="Sección principal">
+    <img
+      src="images/hero.jpg"
+      alt="Ambiente de sesión de masoterapia profesional en Pactiacalli, CDMX"
+      class="hero__bg"
+      loading="eager"
+    />
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__logo">
+          <img src="images/logo-pactiacalli.jpeg" alt="Pactiacalli — Masoterapia Profesional" />
+        </div>
+        <span class="hero__eyebrow">Masoterapia Terapéutica y Ritual · CDMX</span>
+        <h1 class="hero__headline">
+          El cuerpo sana<br />cuando es <em>escuchado<br />con precisión.</em>
+        </h1>
+        <p class="hero__sub">
+          Sesiones personalizadas que integran técnica clínica, profundidad terapéutica
+          y ritual corporal. Diagnóstico previo, atención profesional, resultados reales.
+        </p>
+        <div class="hero__cta">
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+            aria-label="Agendar sesión por WhatsApp"
+          >
+            Agendar sesión
+          </a>
+          <a class="btn btn-white" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span>Explorar</span>
+    </div>
+  </header>
+
+  <!-- =========================================
+       INTRO / FILOSOFÍA
+  ========================================= -->
+  <section class="intro" id="nosotros" aria-labelledby="intro-title">
+    <div class="container">
+      <div class="intro__grid">
+
+        <div class="intro__text reveal">
+          <span class="section-label">Nuestra filosofía</span>
+          <h2 class="section-title" id="intro-title">
+            Donde la técnica<br />encuentra el <em>ritual</em>
+          </h2>
+          <p>
+            Pactiacalli nació de la convicción de que el cuerpo merece una atención
+            tan rigurosa como la que se ofrece en clínica, pero con la presencia
+            y la profundidad de un ritual consciente.
+          </p>
+          <p>
+            Cada sesión comienza con un diagnóstico corporal individualizado.
+            Trabajamos tejido, sistema nervioso y estructura, sin improvisación
+            y sin excesos. Sólo lo que tu cuerpo necesita, aplicado con precisión.
+          </p>
+          <p>
+            Nuestro trabajo es sobrio, profundo y orientado a resultados.
+            Sin promesas vacías. Con presencia real.
+          </p>
+          <div style="margin-top:2.2rem">
+            <a
+              class="btn btn-outline"
+              href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+              target="_blank" rel="noopener"
+            >
+              Quiero saber más
+            </a>
+          </div>
+        </div>
+
+        <div class="intro__visual reveal" style="transition-delay:.15s">
+          <img
+            src="images/sesion1.jpg"
+            alt="Terapeuta aplicando masaje terapéutico profundo en sesión de Pactiacalli"
+            class="intro__img"
+            loading="lazy"
+          />
+          <div class="intro__badge">
+            <strong>100%</strong>
+            <span>Personalizado</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       SERVICIOS
+  ========================================= -->
+  <section class="servicios" id="servicios" aria-labelledby="servicios-title">
+    <div class="container">
+
+      <div class="servicios__header reveal">
+        <span class="section-label">Lo que ofrecemos</span>
+        <h2 class="section-title" id="servicios-title">
+          Servicios <em>especializados</em>
+        </h2>
+      </div>
+
+      <div class="servicios__grid">
+
+        <!-- Tarjeta 1 -->
+        <article class="card reveal" aria-label="Servicio: Terapia Corporal Profunda">
+          <span class="card__num">01</span>
+          <h3 class="card__title">Terapia Corporal Profunda</h3>
+          <p class="card__desc">
+            Abordaje clínico de tensiones crónicas, puntos gatillo y restricciones
+            fasciales. Ideal para quienes acumulan estrés muscular y buscan
+            liberación real y duradera.
+          </p>
+          <ul class="card__tecnicas" aria-label="Técnicas utilizadas">
+            <li>Masaje de tejido profundo</li>
+            <li>Liberación miofascial</li>
+            <li>Puntos gatillo</li>
+            <li>Técnica neuromuscular</li>
+          </ul>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Terapia%20Corporal%20Profunda%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Quiero esta sesión
+          </a>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="card reveal" style="transition-delay:.08s" aria-label="Servicio: Masaje Integral Pactiacalli">
+          <span class="card__num">02</span>
+          <h3 class="card__title">Masaje Integral Pactiacalli®</h3>
+          <p class="card__desc">
+            Nuestra sesión insignia. Combina técnicas terapéuticas con una
+            secuencia de trabajo corporal diseñada para devolver el equilibrio
+            global al organismo.
+          </p>
+          <ul class="card__tecnicas" aria-label="Técnicas utilizadas">
+            <li>Técnica sueca adaptada</li>
+            <li>Trabajo abdominal y diafragmático</li>
+            <li>Integración cráneo-sacral</li>
+            <li>Secuencia propietaria</li>
+          </ul>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Masaje%20Integral%20Pactiacalli%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Quiero esta sesión
+          </a>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="card reveal" style="transition-delay:.16s" aria-label="Servicio: Ritual Corporal Ancestral">
+          <span class="card__num">03</span>
+          <h3 class="card__title">Ritual Corporal Ancestral</h3>
+          <p class="card__desc">
+            Una experiencia de reintegración profunda basada en prácticas
+            mesoamericanas de trabajo corporal. Conexión, presencia y
+            restauración desde adentro.
+          </p>
+          <ul class="card__tecnicas" aria-label="Técnicas utilizadas">
+            <li>Temazcal corporal aplicado</li>
+            <li>Aceites naturales medicinales</li>
+            <li>Trabajo energético sutil</li>
+            <li>Respiración guiada</li>
+          </ul>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Ritual%20Corporal%20Ancestral%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Quiero esta sesión
+          </a>
+        </article>
+
+        <!-- Tarjeta 4 -->
+        <article class="card reveal" style="transition-delay:.06s" aria-label="Servicio: Drenaje y Desinflamación">
+          <span class="card__num">04</span>
+          <h3 class="card__title">Drenaje y Desinflamación</h3>
+          <p class="card__desc">
+            Protocolo especializado para reducir retención de líquidos, aliviar
+            la inflamación sistémica y activar el sistema linfático con
+            movimientos precisos y rítmicos.
+          </p>
+          <ul class="card__tecnicas" aria-label="Técnicas utilizadas">
+            <li>Drenaje linfático manual</li>
+            <li>Presoterapia manual</li>
+            <li>Técnica Vodder</li>
+            <li>Estimulación visceral</li>
+          </ul>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Drenaje%20y%20Desinflamaci%C3%B3n%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Quiero esta sesión
+          </a>
+        </article>
+
+        <!-- Tarjeta 5 -->
+        <article class="card reveal" style="transition-delay:.12s" aria-label="Servicio: Recuperación Deportiva">
+          <span class="card__num">05</span>
+          <h3 class="card__title">Recuperación Deportiva</h3>
+          <p class="card__desc">
+            Diseñado para atletas y personas físicamente activas. Acelera la
+            recuperación, previene lesiones y optimiza el rendimiento
+            con protocolo post-esfuerzo.
+          </p>
+          <ul class="card__tecnicas" aria-label="Técnicas utilizadas">
+            <li>Masaje deportivo estructurado</li>
+            <li>Crioterapia aplicada</li>
+            <li>Estiramientos asistidos</li>
+            <li>Compresión y activación</li>
+          </ul>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Recuperaci%C3%B3n%20Deportiva%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Quiero esta sesión
+          </a>
+        </article>
+
+        <!-- Tarjeta 6 -->
+        <article class="card reveal" style="transition-delay:.18s" aria-label="Servicio: Moldeo y Definición Corporal">
+          <span class="card__num">06</span>
+          <h3 class="card__title">Moldeo y Definición Corporal</h3>
+          <p class="card__desc">
+            Protocolo estético-terapéutico orientado a mejorar la silueta,
+            tonificar tejidos y reducir grasa localizada mediante técnicas
+            manuales especializadas.
+          </p>
+          <ul class="card__tecnicas" aria-label="Técnicas utilizadas">
+            <li>Maderoterapia profesional</li>
+            <li>Presoterapia abdominal</li>
+            <li>Reafirmación muscular</li>
+            <li>Técnica reductora manual</li>
+          </ul>
+          <a
+            class="btn btn-outline"
+            href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Moldeo%20y%20Definici%C3%B3n%20Corporal%20en%20Pactiacalli."
+            target="_blank" rel="noopener"
+          >
+            Quiero esta sesión
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       DIFERENCIADORES
+  ========================================= -->
+  <section class="diferenciadores" aria-labelledby="dif-title">
+    <div class="container">
+      <div class="diferenciadores__header reveal">
+        <span class="section-label">Por qué Pactiacalli</span>
+        <h2 class="section-title" id="dif-title">
+          Una atención <em>distinta</em><br />desde el primer contacto
+        </h2>
+      </div>
+
+      <div class="diferenciadores__grid">
+
+        <div class="dif-item reveal">
+          <span class="dif-item__icon" aria-hidden="true">◎</span>
+          <h3 class="dif-item__title">Diagnóstico Corporal Previo</h3>
+          <p class="dif-item__text">
+            Antes de cada sesión evaluamos tu condición física, historial
+            de tensiones y objetivos. Sin diagnóstico no hay protocolo.
+          </p>
+        </div>
+
+        <div class="dif-item reveal" style="transition-delay:.08s">
+          <span class="dif-item__icon" aria-hidden="true">⊕</span>
+          <h3 class="dif-item__title">Personalización Total</h3>
+          <p class="dif-item__text">
+            No existe una sesión genérica en Pactiacalli. Cada protocolo
+            se construye para tu cuerpo, en ese momento específico.
+          </p>
+        </div>
+
+        <div class="dif-item reveal" style="transition-delay:.16s">
+          <span class="dif-item__icon" aria-hidden="true">✦</span>
+          <h3 class="dif-item__title">Profesionalismo Clínico</h3>
+          <p class="dif-item__text">
+            Formación continua, técnica depurada y criterio terapéutico.
+            Cada maniobra tiene un propósito claro y un respaldo técnico.
+          </p>
+        </div>
+
+        <div class="dif-item reveal" style="transition-delay:.24s">
+          <span class="dif-item__icon" aria-hidden="true">◈</span>
+          <h3 class="dif-item__title">Experiencia Segura y Profunda</h3>
+          <p class="dif-item__text">
+            Un espacio donde la profundidad del trabajo y la seguridad
+            del proceso coexisten. Tu bienestar y tu integridad, primero.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="diferenciadores__cta reveal">
+        <a
+          class="btn btn-white"
+          href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+          target="_blank" rel="noopener"
+        >
+          Comenzar mi proceso
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       GALERÍA
+  ========================================= -->
+  <section class="galeria" id="galeria" aria-labelledby="galeria-title">
+    <div class="container">
+      <div class="galeria__header reveal">
+        <span class="section-label">El espacio</span>
+        <h2 class="section-title" id="galeria-title">
+          Un ambiente <em>diseñado para sanar</em>
+        </h2>
+      </div>
+
+      <div class="galeria__grid" role="list" aria-label="Galería de imágenes Pactiacalli">
+
+        <div class="galeria__item reveal" role="listitem">
+          <img
+            src="images/sesion1.jpg"
+            alt="Sesión de masoterapia terapéutica de cuerpo completo en Pactiacalli, CDMX"
+            loading="lazy"
+          />
+          <div class="galeria__overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="galeria__item reveal" style="transition-delay:.07s" role="listitem">
+          <img
+            src="images/sesion2.jpg"
+            alt="Detalle de técnica de liberación miofascial en sesión Pactiacalli"
+            loading="lazy"
+          />
+          <div class="galeria__overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="galeria__item reveal" style="transition-delay:.14s" role="listitem">
+          <img
+            src="images/sesion3.jpg"
+            alt="Trabajo de masaje profundo en zona lumbar y dorsal, Pactiacalli CDMX"
+            loading="lazy"
+          />
+          <div class="galeria__overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="galeria__item reveal" style="transition-delay:.21s" role="listitem">
+          <img
+            src="images/ambiente.jpg"
+            alt="Ambiente íntimo y cuidado del espacio de terapia en Pactiacalli, Ciudad de México"
+            loading="lazy"
+          />
+          <div class="galeria__overlay" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       TESTIMONIOS
+  ========================================= -->
+  <section class="testimonios" id="testimonios" aria-labelledby="testimonios-title">
+    <div class="container">
+      <div class="testimonios__header reveal">
+        <span class="section-label">Experiencias</span>
+        <h2 class="section-title" id="testimonios-title">
+          Lo que dicen quienes<br /><em>ya sintieron la diferencia</em>
+        </h2>
+      </div>
+
+      <div class="testimonios__grid">
+
+        <article class="testimonio reveal" aria-label="Testimonio de Mariana R.">
+          <p class="testimonio__text">
+            Llegué con dolor lumbar crónico que llevaba meses sin mejorar con
+            nada. Desde la primera sesión sentí un cambio real. No es un masaje
+            común, es trabajo serio y profundo. Tres meses después sigo sin dolor.
+          </p>
+          <div class="testimonio__divider" aria-hidden="true"></div>
+          <p class="testimonio__autor">Mariana R.</p>
+          <p class="testimonio__ciudad">Polanco, CDMX</p>
+          <div class="testimonio__stars" aria-label="5 estrellas">★★★★★</div>
+        </article>
+
+        <article class="testimonio reveal" style="transition-delay:.1s" aria-label="Testimonio de Diego S.">
+          <p class="testimonio__text">
+            Soy corredor y buscaba un terapeuta que entendiera el cuerpo
+            de un atleta. El diagnóstico previo me impresionó, ya que detectaron
+            compensaciones que ni yo sabía que tenía. El protocolo de recuperación
+            es completamente diferente a lo que había probado.
+          </p>
+          <div class="testimonio__divider" aria-hidden="true"></div>
+          <p class="testimonio__autor">Diego S.</p>
+          <p class="testimonio__ciudad">Coyoacán, CDMX</p>
+          <div class="testimonio__stars" aria-label="5 estrellas">★★★★★</div>
+        </article>
+
+        <article class="testimonio reveal" style="transition-delay:.2s" aria-label="Testimonio de Sofía M.">
+          <p class="testimonio__text">
+            El ritual corporal fue una experiencia que no esperaba. Entré con
+            ansiedad acumulada de meses y salí sintiéndome en mi cuerpo de una
+            manera que hacía tiempo no recordaba. Muy recomendado para quienes
+            buscan algo más que relajación superficial.
+          </p>
+          <div class="testimonio__divider" aria-hidden="true"></div>
+          <p class="testimonio__autor">Sofía M.</p>
+          <p class="testimonio__ciudad">Santa Fe, CDMX</p>
+          <div class="testimonio__stars" aria-label="5 estrellas">★★★★★</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CONTACTO / FORMULARIO
+  ========================================= -->
+  <section class="contacto" id="contacto" aria-labelledby="contacto-title">
+    <div class="container">
+      <div class="contacto__grid">
+
+        <!-- Info -->
+        <div class="reveal">
+          <span class="section-label">Agenda tu sesión</span>
+          <h2 class="section-title" id="contacto-title">
+            Da el primer<br /><em>paso</em>
+          </h2>
+          <p>
+            Completa el formulario y nos pondremos en contacto contigo
+            en menos de 24 horas para confirmar tu sesión y resolver
+            cualquier duda.
+          </p>
+
+          <div class="contacto__datos" aria-label="Datos de contacto">
+            <div class="contacto__dato">
+              <span class="contacto__dato-icon" aria-hidden="true">📍</span>
+              <div class="contacto__dato-text">
+                <strong>Ubicación</strong>
+                Ciudad de México (CDMX)
+              </div>
+            </div>
+            <div class="contacto__dato">
+              <span class="contacto__dato-icon" aria-hidden="true">📱</span>
+              <div class="contacto__dato-text">
+                <strong>Teléfono y WhatsApp</strong>
+                <a href="tel:525637091144" style="color:inherit">56 3709 1144</a>
+              </div>
+            </div>
+            <div class="contacto__dato">
+              <span class="contacto__dato-icon" aria-hidden="true">🕐</span>
+              <div class="contacto__dato-text">
+                <strong>Horario de atención</strong>
+                Lunes a Sábado, 12:00 – 20:00 h
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="reveal" style="transition-delay:.12s">
+          <form
+            class="form"
+            action="https://formspree.io/f/xgollowa"
+            method="POST"
+            aria-label="Formulario de contacto"
+            novalidate
+          >
+
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="nombre">Nombre completo</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre"
+                  required
+                  aria-required="true"
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="telefono">Teléfono</label>
+                <input
+                  class="form__input"
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="+52 55 0000 0000"
+                  required
+                  aria-required="true"
+                />
+              </div>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="email">Correo electrónico</label>
+              <input
+                class="form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="tu@correo.com"
+                required
+                aria-required="true"
+              />
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="servicio">Tipo de servicio</label>
+              <select class="form__select" id="servicio" name="servicio" required aria-required="true">
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option value="terapia-corporal-profunda">Terapia Corporal Profunda</option>
+                <option value="masaje-integral-pactiacalli">Masaje Integral Pactiacalli®</option>
+                <option value="ritual-corporal-ancestral">Ritual Corporal Ancestral</option>
+                <option value="drenaje-desinflamacion">Drenaje y Desinflamación</option>
+                <option value="recuperacion-deportiva">Recuperación Deportiva</option>
+                <option value="moldeo-definicion">Moldeo y Definición Corporal</option>
+                <option value="no-se-cual">No sé cuál elegir</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label class="form__label" for="mensaje">Mensaje</label>
+              <textarea
+                class="form__textarea"
+                id="mensaje"
+                name="mensaje"
+                placeholder="Cuéntanos brevemente qué estás buscando o si tienes alguna condición que debamos considerar..."
+              ></textarea>
+            </div>
+
+            <!-- Campos ocultos para Formspree -->
+            <input type="hidden" name="_subject" value="Nueva consulta desde Pactiacalli.com" />
+            <input type="hidden" name="_language" value="es" />
+
+            <button class="form__submit" type="submit">Enviar consulta</button>
+
+            <p class="form__whatsapp-note">
+              ¿Prefieres respuesta inmediata? Escríbenos directamente por
+              <a
+                href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+                target="_blank" rel="noopener"
+                aria-label="Contactar por WhatsApp"
+              >
+                WhatsApp
+              </a>.
+            </p>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <img src="images/logo-pactiacalli.jpeg" alt="Pactiacalli logo" />
+          </div>
+          <p>
+            Masoterapia profesional terapéutica y ritual.<br />
+            Diagnóstico corporal, técnica clínica, experiencia consciente.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Servicios</p>
+          <nav class="footer__links" aria-label="Servicios disponibles">
+            <a href="#servicios">Terapia Corporal Profunda</a>
+            <a href="#servicios">Masaje Integral Pactiacalli®</a>
+            <a href="#servicios">Ritual Corporal Ancestral</a>
+            <a href="#servicios">Drenaje y Desinflamación</a>
+            <a href="#servicios">Recuperación Deportiva</a>
+            <a href="#servicios">Moldeo y Definición</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Contacto</p>
+          <nav class="footer__links" aria-label="Información de contacto">
+            <span style="font-size:.88rem;font-weight:300">📍 CDMX, México</span>
+            <a href="tel:525637091144">📱 56 3709 1144</a>
+            <a
+              href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+              target="_blank" rel="noopener"
+            >
+              WhatsApp directo
+            </a>
+            <a href="#" style="opacity:.5;cursor:default">Aviso de Privacidad</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© <span id="year"></span> Pactiacalli. Todos los derechos reservados.</p>
+        <div class="footer__legal">
+          <a href="#">Aviso de Privacidad</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       BOTÓN FLOTANTE WHATSAPP
+  ========================================= -->
+  <a
+    class="wa-float"
+    href="https://wa.me/525637091144?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20una%20sesi%C3%B3n%20en%20Pactiacalli."
+    target="_blank"
+    rel="noopener"
+    aria-label="Abrir WhatsApp de Pactiacalli"
+  >
+    <span class="wa-tooltip" aria-hidden="true">Escríbenos</span>
+    <!-- WhatsApp SVG icon -->
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+  <script>
+    // --- Año dinámico en footer ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- Navbar scroll ---
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // --- Menú hamburguesa ---
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    mobileClose.addEventListener('click', closeMobile);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
+
+    // --- Scroll reveal con Intersection Observer ---
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // --- Formspree submit con feedback sencillo ---
+    const form = document.querySelector('.form');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        const action = form.getAttribute('action');
+        if (!action.includes('formspree.io')) return;
+
+        e.preventDefault();
+        const btn = form.querySelector('.form__submit');
+        const original = btn.textContent;
+        btn.textContent = 'Enviando…';
+        btn.disabled = true;
+
+        try {
+          const res = await fetch(action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            btn.textContent = '¡Mensaje enviado!';
+            form.reset();
+          } else {
+            btn.textContent = 'Error al enviar';
+          }
+        } catch {
+          btn.textContent = 'Error de conexión';
+        }
+
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.disabled = false;
+        }, 4000);
+      });
+    }
+  </script>
+
+</body>
+</html>
